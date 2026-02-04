@@ -17,10 +17,7 @@ public:
         while(temp->next != nullptr){
             cout << temp->val << endl;
             if(temp->val == temp->next->val) {
-                ListNode* del = temp->next;
                 temp->next = temp->next->next;
-                del->next = nullptr;
-                delete del;
             }
             else
             temp = temp->next;
