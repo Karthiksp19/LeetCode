@@ -1,0 +1,25 @@
+class Solution {
+public:
+    string clearDigits(string s) {
+        stack<char> st;
+        int n = s.size();
+        for (int i = 0; i < n; i++){
+            char ch = s[i];
+            if(isalpha(ch)){
+                st.push(ch);
+            }
+            else{
+                st.pop();
+            }
+        }
+
+        string ans = "";
+        while(!st.empty()){
+            ans += st.top();
+            st.pop();
+        }
+
+        reverse(ans.begin(), ans.end());
+        return ans;
+    }
+};
